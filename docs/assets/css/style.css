@@ -34,7 +34,7 @@ h6,
 }
 
 .section {
-  padding: 7rem 0;
+  padding: 2.5rem 0;
 }
 
 .filters a {
@@ -185,25 +185,27 @@ h6,
 
 .readmore {
   display: inline-block;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   padding: 10px 15px;
   font-size: 12px;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
   transition: 0.2s all ease;
   font-weight: 700;
+  background-color: #000;
 }
 
 .readmore:active,
-.readmore:focus,
-.readmore:hover {
+.readmore:focus{
   outline: none;
+  
 }
 
 .readmore:hover {
-  color: #fff;
+  color: #000;
   text-decoration: none;
-  background: #000;
+  background: #fff;
+  border: 1px solid #000;
 }
 
 .testimonials-slider .swiper-pagination {
@@ -336,8 +338,8 @@ h6,
 --------------------------------------------------------------*/
 /* Custom Navmenu */
 .custom-navmenu {
-  background: #0d1e2d;
-  text-align: end;
+  background: #000;
+  text-align: center;
 }
 
 .custom-navmenu .custom-menu,
@@ -386,12 +388,13 @@ h6,
 .custom-navbar {
   padding-top: 50px;
   width: 100%;
+
 }
 
 @media (max-width: 780px) {
   .custom-navbar>.container {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
@@ -485,10 +488,11 @@ h6,
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #f8f9fa;
+  background: #000;
   position: relative;
   text-align: center;
-  color: #0d1e2d;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
 .social a span {
@@ -501,4 +505,6 @@ h6,
 
 .social a:hover {
   color: #000;
+  background-color: #FFF;
+  border: 1px solid #000;
 }
