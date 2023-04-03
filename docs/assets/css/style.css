@@ -162,9 +162,11 @@ h6,
 }
 
 .testimonial-wrap .testimonial img {
-  border-radius: 50%;
-  width: 120px;
-  margin: 0 auto 30px auto;
+  
+  
+  width: 300px;
+  
+  
 }
 
 .testimonial-wrap .testimonial blockquote p {
