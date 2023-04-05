@@ -32,7 +32,9 @@ h6,
 .font-heading {
   font-family: "Raleway", sans-serif;
 }
-
+p {
+  text-align: justify;
+}
 .section {
   padding: 2.5rem 0;
 }
@@ -251,7 +253,7 @@ h6,
 
 .form-control {
   border-radius: 0;
-  background: #f8f9fa;
+  background: #d7d6d6;
   border: 1px solid transparent;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
@@ -398,6 +400,23 @@ h6,
     padding-right: 15px;
     padding-left: 15px;
   }
+  .filters a {
+    
+    padding-left: 0px;
+    padding-top: 10px;
+  }
+  .custom-navmenu .custom-menu li {
+    padding: 10px;
+  }
+  .section {
+    padding: 1rem 0;
+  }
+  .social{
+    margin-top: 10px;
+  }
+  .h3 {
+    margin-top: 15px;
+  }
 }
 
 .custom-navbar .navbar-brand {
@@ -477,9 +496,7 @@ h6,
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
-  padding: 0 0 4rem 0;
-}
+
 
 .footer a {
   color: #000;
