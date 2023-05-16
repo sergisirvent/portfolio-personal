@@ -337,6 +337,40 @@ p {
   }
 }
 
+.myImage {
+  border-radius: 10%;
+  width: 250px;
+  height: 250px;
+}
+.elementos_lista_skills {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px 10px 20px 10px!important;
+}
+
+.hobbiesDiv {
+  padding: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.hobbiesDiv div {
+  justify-content: center;
+  align-items: center;
+  border: 0px!important;
+}
+.hobbiesDiv div img {
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+.trailerTLOA {
+  justify-content: center;
+}
+.trailerTLOA iframe {
+  width: 80%;
+  aspect-ratio:calc();
+  text-align: center;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -414,7 +448,7 @@ p {
   .social{
     margin-top: 10px;
   }
-  .h3 {
+    .h3 {
     margin-top: 15px;
   }
 }
