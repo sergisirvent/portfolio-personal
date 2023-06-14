@@ -366,8 +366,11 @@ p {
 .trailerTLOA {
   justify-content: center;
 }
+.trailerTLOA h2 {
+  padding: 2rem;
+}
 .trailerTLOA iframe {
-  width: 80%;
+  
   aspect-ratio:calc();
   text-align: center;
 }
