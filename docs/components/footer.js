@@ -13,10 +13,10 @@ class Footer extends HTMLElement {
               <a href="contact.html">
                 <span class="bi bi-envelope-fill"></span>
               </a>
-              <a href="https://www.linkedin.com/in/sergi-sirvent-sempere-a3b633229/">
+              <a  href="https://www.linkedin.com/in/sergi-sirvent-sempere-a3b633229/" target="_blank">
                 <span class="bi bi-linkedin"></span>
               </a>
-              <a href="https://github.com/sergisirvent">
+              <a href="https://github.com/sergisirvent" target="_blank">
                 <span class="bi bi-github"></span>
               </a>
             </div>

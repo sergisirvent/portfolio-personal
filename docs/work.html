@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Work</title>
+    <title>Work detail</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -70,6 +70,7 @@
             const workData = database.works.find(work => work.id === workId);
             if (workData) {
                 workElement.setAttribute('work', JSON.stringify(workData));
+                document.title = workData.head.title;
             } else {
                 console.error('Work not found in the database.');
             }

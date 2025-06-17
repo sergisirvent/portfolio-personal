@@ -18,13 +18,22 @@ class Work extends HTMLElement {
             </div>
         </div>
     `
-
+    contribution = (texts) => `
+        <h4 class="h4 mb-3">My main contribution:</h4>
+        <ul class="list-unstyled list-line mb-5">
+            ${texts.map(text => `<li>${text}</li>`).join('\n')}
+        </ul>
+    `;
     videoBtn = (links) => links?.video
         ? `<p><a class="readmore" href="${links.video}" target="_blank">Gameplay</a></p>`
         : '';
 
     downloadBtn = (links) => links?.download
         ? `<p><a href="${links.download}" class="readmore" target="_blank" download>Download the project</a></p>`
+        : '';
+
+    playTheGameButton = (links) => links?.playTheGame
+        ? `<p><a href="${links.playTheGame}" class="readmore" target="_blank">Play the game</a></p>`
         : '';
 
     section = ({title, paragraphs, image}, index, isLast) => `
@@ -61,6 +70,7 @@ class Work extends HTMLElement {
         const sections = this.work?.sections || [];
         const body = this.work?.body || {};
         const ps = body.content || [];
+        const contribution = body?.contribution || [];
         const links = body.links;
 
         return `
@@ -80,11 +90,13 @@ class Work extends HTMLElement {
         
                                     <div class="mb-5">
                                         ${ps.map(it => `<p class="mb-4">${it}</p>`).join('')}
+                                        ${contribution.length ? this.contribution(contribution) : ''}
                                     </div>
         
                                     <p><a class="readmore" href="#detailedWork">See more</a></p>
                                     ${this.videoBtn(links)}
                                     ${this.downloadBtn(links)}
+                                    ${this.playTheGameButton(links)}
                                 </div>
                             </div>
                         </div>
