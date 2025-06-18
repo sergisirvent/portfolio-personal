@@ -19,6 +19,9 @@ class Footer extends HTMLElement {
               <a href="https://github.com/sergisirvent" target="_blank">
                 <span class="bi bi-github"></span>
               </a>
+              <a href="https://sergi-sirvent.itch.io/" target="_blank">
+                <span class="bi bi-controller"></span>
+              </a>
             </div>
           </div>
         </div>

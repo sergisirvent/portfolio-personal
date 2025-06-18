@@ -24,8 +24,8 @@ class Work extends HTMLElement {
             ${texts.map(text => `<li>${text}</li>`).join('\n')}
         </ul>
     `;
-    videoBtn = (links) => links?.video
-        ? `<p><a class="readmore" href="${links.video}" target="_blank">Gameplay</a></p>`
+    videoBtn = (links) => (links?.videoBtnLabel)
+        ? `<p><a class="readmore" href="#videoYoutubeSM">${links.videoBtnLabel}</a></p>`
         : '';
 
     downloadBtn = (links) => links?.download
@@ -35,6 +35,18 @@ class Work extends HTMLElement {
     playTheGameButton = (links) => links?.playTheGame
         ? `<p><a href="${links.playTheGame}" class="readmore" target="_blank">Play the game</a></p>`
         : '';
+
+    demonstration = (links) => links?.demonstration
+        ? `<p><a href="${links.demonstration}" class="readmore" target="_blank">Video tour</a></p>`
+        : '';
+
+    embedYoutubeVideo = (links) => (links?.videoYoutubeEmbedLink && links?.videoSectionTitle)
+        ? ` <section id="videoYoutubeSM" style="text-align: center;">
+      <h2>${links.videoSectionTitle}</h2>
+      <div style="text-align: center;padding: 2rem;">
+        <iframe width="560" height="315" src="${links.videoYoutubeEmbedLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>`: '';
 
     section = ({title, paragraphs, image}, index, isLast) => `
         <div class="d-flex flex-column align-items-center w-100 mb-5 mt-3 pt-2 pb-5">
@@ -72,6 +84,7 @@ class Work extends HTMLElement {
         const ps = body.content || [];
         const contribution = body?.contribution || [];
         const links = body.links;
+        const hasSections = sections.length > 0;
 
         return `
         <main id="main">
@@ -90,13 +103,17 @@ class Work extends HTMLElement {
         
                                     <div class="mb-5">
                                         ${ps.map(it => `<p class="mb-4">${it}</p>`).join('')}
+                                        
+                                        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 1rem;">
+                                            ${hasSections ? `<p><a class="readmore" href="#detailedWork">See more</a></p>` : ''}
+                                            ${this.videoBtn(links)}
+                                            ${this.downloadBtn(links)}
+                                            ${this.playTheGameButton(links)}
+                                        </div>
                                         ${contribution.length ? this.contribution(contribution) : ''}
                                     </div>
         
-                                    <p><a class="readmore" href="#detailedWork">See more</a></p>
-                                    ${this.videoBtn(links)}
-                                    ${this.downloadBtn(links)}
-                                    ${this.playTheGameButton(links)}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -106,10 +123,14 @@ class Work extends HTMLElement {
         
         
             <!-- ======= Detailed work section ======= -->
-            <section id="detailedWork">
-                <h2>More about the project</h2>
-                ${this.sections(sections)}
-            </section>
+            ${hasSections ? `
+                <section id="detailedWork">
+                    <h2>More about the project</h2>
+                    ${this.sections(sections)}
+                </section>
+            ` : ''}
+
+            ${this.embedYoutubeVideo(links)}
         </main>
     `
     }

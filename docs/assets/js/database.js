@@ -49,6 +49,20 @@ const database = {
                 language: "Unreal engine",
                 image: "shooterMole.jpg",
                 filter: "protoype"
+            },
+            {
+                id: "RD",
+                title: "Railgun Defender: AEGIS",
+                language: "Unity 2D",
+                image: "RD.png",
+                filter: "mainProjects"
+            },
+            {
+                id: "YNK",
+                title: "Yuki No Kazan",
+                language: "C++ & OpenGL",
+                image: "YNK.png",
+                filter: "mainProjects"
             }
         ]
     },
@@ -68,7 +82,9 @@ const database = {
                     "Also this project has a binary file where all the user data is saved. You can access to this document with an independent program that is also in the project (Admin Console). This project is developed with C++ and supported with the ESAT graphic library."
                 ],
                 links: {
-                    video: "https://youtu.be/K-LyWfPCxEo",
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/K-LyWfPCxEo?si=3bdtOe7EzFA1qmD6",
+                    videoSectionTitle: "Commented gammeplay by me",
+                    videoBtnLabel: "See commented gameplay",
                     download: "https://drive.google.com/file/d/1fNklp-N2BtIaxbEKm5L0ql37Gr3iGIxL/view?usp=sharing"
                 },
             },
@@ -219,7 +235,9 @@ const database = {
                 ],
                 links: {
                     download: "https://drive.google.com/file/d/1EF8VG-5fTy9PbUILGqok1cdU3IxrMHwN/view",
-                    video: "https://www.youtube.com/watch?v=MVbF2QhI1ps&ab_channel=SergiSirvent"
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/MVbF2QhI1ps?si=AVy1_yHphUTD86oU",
+                    videoSectionTitle: "Commented gammeplay by me",
+                    videoBtnLabel: "See commented gameplay"
                 },
             },
             sections: [
@@ -284,7 +302,9 @@ const database = {
                 ],
                 links: {
                     download: "https://drive.google.com/file/d/1hpalMz_oahq8cAPEhALmTmDvLoQ12d8G/view",
-                    video: "https://www.youtube.com/watch?v=K8RkMcdJcYI&ab_channel=SergiSirvent"
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/K8RkMcdJcYI?si=BHItBm1qpIDzYgmb",
+                    videoSectionTitle: "Commented gammeplay by me",
+                    videoBtnLabel: "See commented gameplay"
                 },
             },
             sections: [
@@ -353,7 +373,9 @@ const database = {
                     "Car and shovel modelling and texturing"
                 ],
                 links: {
-                    video: "https://www.youtube.com/watch?v=bxHSVJKPQ30&ab_channel=SergiSirvent"
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/bxHSVJKPQ30?si=NrgAX-PDXJPInQos",
+                    videoSectionTitle: "Video teaser",
+                    videoBtnLabel: "See teaser"
                 },
             },
             sections: [
@@ -448,7 +470,7 @@ const database = {
             body: {
                 image: "shooterMole_Big.jpg",
                 title: "Shooter Mole - Collaborative project",
-                technology: "Unity engine",
+                technology: "Unreal engine",
                 content: [
                     "Shooter Mole is a FPS puzzle level designed to test the player's solving skills as well as their FPS aiming skills.",
                     "The main reference of the level is the arcade game called Whac-A-Mole, in which the player has to hit different moles. In this level, all the moles have their own characteristic color, and each color performs a different action, so the player associates colors with specific actions.",
@@ -461,7 +483,9 @@ const database = {
                     "LDD"
                 ],
                 links: {
-                    video: "https://youtu.be/o_oFNMidwnU?si=mSmTwQpoH9j2X8GG"
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/o_oFNMidwnU",
+                    videoSectionTitle: "Gameplay commented by the team",
+                    videoBtnLabel: "See commented gameplay"
                 },
             },
             sections: [
@@ -497,6 +521,105 @@ const database = {
                     image: "tutoGifSM.gif"
                 }
             ]
+        },
+        {
+            id: "RD",
+            head: {
+                title: "Railgun Defender: AEGIS",
+                description: "Rogue-like, tower defense demo made in Unity"
+            },
+            body: {
+                image: "RD.png",
+                title: "Railgun Defender: AEGIS - Collaborative project",
+                technology: "Unity",
+                content: [
+                    "This project is a rogue-like tower defense game set in space, where players must defend their core and upgrade their railgun to defeat various enemies and bosses.",
+                    "If you want to play it, please click on the buttons below! You can play it directly in your browser or download the Android APK. "
+                ],
+                contribution: [
+                    "Movement",
+                    "Bosses",
+                    "Round logic",
+                    "Tutorial"
+                ],
+                links: {
+                    playTheGame: "https://lnkd.in/gKGRRC66",
+                    download: "https://lnkd.in/gr4MzM89",
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/Iy9fGn4GNnU?si=915W5Qu5zSJa9Dqq",
+                    videoSectionTitle: "Game trailer",
+                    videoBtnLabel: "See game trailer"
+                },
+            },
+            sections: [
+                {
+                    title: "Defend your core",
+                    paragraphs: [
+                        "Defend your core and your ship against different types of enemies. Each enemy has a different type of movement and a different shot type.",
+                    ],
+                    image: "RD_enemies.gif"
+                },
+                {
+                    title: "Improve your stats",
+                    paragraphs: [
+                        "This project has an upgrade system, each time players level up, they can choose between three upgrades for the rest of the run.",
+                        "Discover all the upgrades and try to defend your core from the enemy forces!"
+                    ],
+                    image: "RD_PU.gif"
+                },
+                {
+                    title: "Final bosses",
+                    paragraphs: [
+                        "Confront several bosses during your journey.",
+                        "Each boss uses a different mechanic trying to eliminate you."
+                    ],
+                    image: "RD_Boss.gif"
+                },
+                {
+                    title: "Different ships",
+                    paragraphs: [
+                        "Choose between three different ship to customize your journey.",
+                        "Each ship has a different style, find your favourite!"
+                    ],
+                    image: "RD_Ships.gif"
+                },
+                {
+                    title: "Mobile adaptation",
+                    paragraphs: [
+                        "Discover our mobile adaptative controls.",
+                        "Play Railgun Defender: AEGIS only with one hand, enjoy it wherever you are"
+                    ],
+                    image: "RD_Mobile.gif"
+                }
+            ]
+        },
+        {
+            id: "YNK",
+            head: {
+                title: "Yuki no Kazan",
+                description: "Scene created with C++, ImGui and a OpenGl framework"
+            },
+            body: {
+                image: "YNK.png",
+                title: "Yuki no Kazan - Collaborative project",
+                technology: "C++ & OpenGL",
+                content: [
+                    "Yuki no Kazan is an scene created with C++, ImGui and a OpenGl framework that reprensents the feudal japan at the foot of a snow-capped volcano.",
+                    "Enjoy flying around with the camera, create lights or new entities."
+                ],
+                contribution: [
+                    "Light and entities creation",
+                    "Particle system",
+                    "ASCII, B&W and Inverse postprocesses",
+                    "ImGui main structure",
+                    "Flycam with keboard and XBox controller integration",
+                    "Draw and render mode control"
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/pqLwFboqesk?si=H5nG-HBTvjfHSQk3",
+                    videoSectionTitle: "Video tour",
+                    videoBtnLabel: "See video tour"
+                },
+            }
         }
     ]
 }
