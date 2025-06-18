@@ -166,6 +166,41 @@ const database = {
                     ],
                     image: "PathGif.gif"
                 },
+                {
+                    title: "Be careful with soft ice",
+                    paragraphs: [
+                        "If you choose to walk on a tile that does not belong to the hard ice path, you will fall into the sea and you will have to start the level again."
+
+                    ],
+                    image: "BrokenIce.gif"
+                },
+                {
+                    title: "Procedural generation",
+                    paragraphs: [
+                        "Thanks to rule-based procedural generation, the player will find a different challenge every time he re-enters a level.",
+                        "Say goodbye to prefabricated and repetitive levels."
+
+                    ],
+                    image: "allPaths.gif"
+                },
+                {
+                    title: "Penguins",
+                    paragraphs: [
+                        "Try to avoid the penguins, they will try to do anything to get you away from their home.",
+                        "They may look adorable, but I don't recommend you touching them."
+
+                    ],
+                    image: "Enemy.gif"
+                },
+                {
+                    title: "Power ups",
+                    paragraphs: [
+                        "Shining diamonds that conceal great power. The decision to take them is optional as it can be beneficial or a bad decision.",
+                        "It is up to you to decide..."
+
+                    ],
+                    image: "PowerUpGif.gif"
+                }
             ]
         },
         {
