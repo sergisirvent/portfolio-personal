@@ -40,13 +40,34 @@ class Work extends HTMLElement {
         ? `<p><a href="${links.demonstration}" class="readmore" target="_blank">Video tour</a></p>`
         : '';
 
-    embedYoutubeVideo = (links) => (links?.videoYoutubeEmbedLink && links?.videoSectionTitle)
-        ? ` <section id="videoYoutubeSM" style="text-align: center;">
-      <h2>${links.videoSectionTitle}</h2>
-      <div style="text-align: center;padding: 2rem;">
-        <iframe width="560" height="315" src="${links.videoYoutubeEmbedLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </section>`: '';
+    embedYoutubeVideo = (links) =>
+  (links?.videoYoutubeEmbedLink && links?.videoSectionTitle)
+    ? ` <section id="videoYoutubeSM" style="text-align: center;">
+        <h2>${links.videoSectionTitle}</h2>
+        <div style="
+          width: 100%;
+          max-width: 720px;           /* Ancho deseado */
+          aspect-ratio: 3 / 2;        /* Mantiene proporción 3:2 (1080x720) */
+          margin: 2rem auto;
+          position: relative;
+        ">
+          <iframe src="${links.videoYoutubeEmbedLink}" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  ">
+          </iframe>
+        </div>
+      </section>`
+    : '';
 
     section = ({title, paragraphs, image}, index, isLast) => `
         <div class="d-flex flex-column align-items-center w-100 mb-5 mt-3 pt-2 pb-5">
