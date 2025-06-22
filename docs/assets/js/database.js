@@ -30,6 +30,13 @@ const database = {
                 filter: "mainProjects games"
             },
             {
+                id: "CHESS",
+                title: "Chendless",
+                language: "Unity",
+                image: "Chendless.png",
+                filter: "mainProjects games"
+            },
+            {
                 id: "IT",
                 title: "Ice Tiles",
                 language: "Unity",
@@ -37,17 +44,17 @@ const database = {
                 filter: "mainProjects games developing"
             },
             {
-                id: "Jetpac",
-                title: "Jetpac",
-                language: "C++",
-                image: "jetpacMenu.jpg",
-                filter: "mainProjects games"
-            },
-            {
                 id: "MC",
                 title: "Moon Cresta",
                 language: "C++",
                 image: "mooncrestacard.jpg",
+                filter: "mainProjects games"
+            },
+            {
+                id: "Jetpac",
+                title: "Jetpac",
+                language: "C++",
+                image: "jetpacMenu.jpg",
                 filter: "mainProjects games"
             },
             {
@@ -687,6 +694,63 @@ const database = {
                     ],
                     image: "COM_Unlock.gif"
                 }
+            ]
+        },
+        {
+            id: "CHESS",
+            head: {
+                title: "Chendless",
+                description: "Infinite runner inspired on classical chess."
+            },
+            body: {
+                image: "Chendless.png",
+                title: "Chendless - Individual project",
+                technology: "Unity",
+                content: [
+                    "Chess like you’ve never seen it before. In this tactical infinite runner, you move across an endless board while enemy pieces close in on you.",
+                    "Every step earns a point, but only by taking down enemies can you keep your multiplier alive. Lose your combo or place your queen on a cracked tile... and it’s checkmate."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/V6RDFUTUj8g?si=cL-TIkLXGpyzwBy3",
+                    videoSectionTitle: "Gameplay",
+                    videoBtnLabel: "See gameplay",
+                    playTheGame: "https://sergi-sirvent.itch.io/chendless",
+                    download: "https://drive.google.com/file/d/1kRDIBCquxu3-pIz2OweEsPpNkL-Imk87/view?usp=sharing"
+                },
+            },
+            sections: [
+                {
+                    title: "Chess enemies",
+                    paragraphs: [
+                        "Enemies are inspired on classical chess pieces.",
+                        "The enemy king will also crack tiles on his jumps... be careful."
+                    ],
+                    image: "CH_Enemies.gif"
+                },
+                {
+                    title: "Chekmate",
+                    paragraphs: [
+                        "Placing your queen on a cracked tile will end your run.",
+                        "If a enemy piece touches you with x1 multiplier is also a checkmate."
+                    ],
+                    image: "CH_Dead.gif"
+                },
+                {
+                    title: "Powerup",
+                    paragraphs: [
+                        "Become a powerful piece by grabbing the flame powerup.",
+                        "Touch enemies with the flame and increase your multiplier."
+                    ],
+                    image: "CH_Power.gif"
+                },
+                {
+                    title: "Badup",
+                    paragraphs: [
+                        "This is a bad powerup, and will change your perspective several seconds.",
+                        "Avoid them if you want a relaxed run."
+                    ],
+                    image: "CH_Badup.gif"
+                },
             ]
         }
     ]
