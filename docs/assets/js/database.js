@@ -2,6 +2,27 @@ const database = {
     home: {
         items: [
             {
+                id: "RD",
+                title: "Railgun Defender: AEGIS",
+                language: "Unity 2D",
+                image: "RD.png",
+                filter: "mainProjects"
+            },
+            {
+                id: "YNK",
+                title: "Yuki No Kazan",
+                language: "C++ & OpenGL",
+                image: "YNK.png",
+                filter: "mainProjects"
+            },
+            {
+                id: "COM",
+                title: "Compendium",
+                language: "Unity",
+                image: "COM_Back.png",
+                filter: "mainProjects"
+            },
+            {
                 id: "asteroids",
                 title: "Asteroids",
                 language: "C++",
@@ -49,20 +70,6 @@ const database = {
                 language: "Unreal engine",
                 image: "shooterMole.jpg",
                 filter: "protoype"
-            },
-            {
-                id: "RD",
-                title: "Railgun Defender: AEGIS",
-                language: "Unity 2D",
-                image: "RD.png",
-                filter: "mainProjects"
-            },
-            {
-                id: "YNK",
-                title: "Yuki No Kazan",
-                language: "C++ & OpenGL",
-                image: "YNK.png",
-                filter: "mainProjects"
             }
         ]
     },
@@ -620,6 +627,67 @@ const database = {
                     videoBtnLabel: "See video tour"
                 },
             }
+        },
+        {
+            id: "COM",
+            head: {
+                title: "Compendium",
+                description: "Turn-based RPG where you cast spells using your voice"
+            },
+            body: {
+                image: "COM_Back.png",
+                title: "Compendium - Collaborative project",
+                technology: "Unity",
+                content: [
+                    "In this browser-based adventure, you play as a mage on a quest to defeat a powerful warlock by using spoken incantations from an ancient spellbook.",
+                    "Discover enemy weaknesses, earn new scrolls after each level, and expand your magical arsenal as you progress"
+                ],
+                contribution: [
+                    "Map, menu and setting screen",
+                    "Turn and user feedback UI",
+                    "Level factory",
+                    "Compendium visuals",
+                    "Backgrounds logic"
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/cW-TPrK2rt8?si=EbO2YWiE9QPYTevZ",
+                    videoSectionTitle: "Game trailer",
+                    videoBtnLabel: "See game trailer",
+                    playTheGame: "https://ferran-44.itch.io/compendium"
+                },
+            },
+            sections: [
+                {
+                    title: "Cast spells",
+                    paragraphs: [
+                        "Cast different elemental spells using your voice.",
+                        "If you don't remember the spell, read the compendium book."
+                    ],
+                    image: "COM_Spell.gif"
+                },
+                {
+                    title: "Different scenarios",
+                    paragraphs: [
+                        "Travel around the 4 different scenarios: fores, beach, volcano and boss cave.",
+                    ],
+                    image: "COM_Map.gif"
+                },
+                {
+                    title: "Confront several enemies",
+                    paragraphs: [
+                        "Confront sereval enemies that changes in every scenario and attempt.",
+                        "Try to find enemies vulnerabilities!"
+                    ],
+                    image: "COM_Enemies.gif"
+                },
+                {
+                    title: "Unlock new spells",
+                    paragraphs: [
+                        "When a combat is finished, a new spell is unlocked on the Compendium.",
+                    ],
+                    image: "COM_Unlock.gif"
+                }
+            ]
         }
     ]
 }
