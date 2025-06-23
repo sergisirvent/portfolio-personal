@@ -4,8 +4,23 @@ const database = {
             {
                 id: "RD",
                 title: "Railgun Defender: AEGIS",
-                language: "Unity 2D",
+                language: "Unity",
                 image: "RD.png",
+                filter: "mainProjects"
+            },
+            {
+                id: "JIMBO",
+                title: "Jimbo Delta Tower",
+                language: "Unreal Engine C++",
+                image: "JIM_BACK.png",
+                filter: "mainProjects games developing"
+            },
+            
+            {
+                id: "COM",
+                title: "Compendium",
+                language: "Unity",
+                image: "COM_Back.png",
                 filter: "mainProjects"
             },
             {
@@ -15,12 +30,13 @@ const database = {
                 image: "YNK.png",
                 filter: "mainProjects"
             },
+            
             {
-                id: "COM",
-                title: "Compendium",
+                id: "IT",
+                title: "Ice Tiles",
                 language: "Unity",
-                image: "COM_Back.png",
-                filter: "mainProjects"
+                image: "logo.png",
+                filter: "mainProjects games developing"
             },
             {
                 id: "asteroids",
@@ -42,6 +58,13 @@ const database = {
                 language: "Unity",
                 image: "logo.png",
                 filter: "mainProjects games developing"
+            },
+            {
+                id: "Jetpac",
+                title: "Jetpac",
+                language: "C++",
+                image: "jetpacMenu.jpg",
+                filter: "mainProjects games"
             },
             {
                 id: "MC",
@@ -716,7 +739,7 @@ const database = {
                     videoBtnLabel: "See gameplay",
                     playTheGame: "https://sergi-sirvent.itch.io/chendless",
                     download: "https://drive.google.com/file/d/1kRDIBCquxu3-pIz2OweEsPpNkL-Imk87/view?usp=sharing"
-                },
+                }
             },
             sections: [
                 {
@@ -752,6 +775,60 @@ const database = {
                     image: "CH_Badup.gif"
                 },
             ]
-        }
+        },
+        {
+            id: "JIMBO",
+            head: {
+                title: "Jimbo Delta Tower",
+                description: "Jimbo Delta Tower is a 3D puzzle-platformer where the protagonist Jimbo tries to climb the tallest building in the city, dodging guards to test his newly gifted hang glider."
+            },
+            body: {
+                image: "JIM_BACK.png",
+                title: "Jimbo Delta Tower - Collaborative project",
+                technology: "Unreal Engine C++",
+                content: [
+                    "In order to fulfil his dream Jimbo wants to climb the biggest building in his city and jump from there with his hang glider.",
+                    "Jimbo is challenged to climb to the top of the Thunk Corp. building to test his skills as a hang glider pilot. To do this he has to get through the floors of the building without being caught by the guards, interacting with the environment - moving objects and taking advantage of the wet floors to move quickly across the building levels."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/aNov3e8jiys?si=9PBZ_Yl0t6SEsCS8",
+                    videoSectionTitle: "Gameplay",
+                    videoBtnLabel: "See gameplay",
+                    download: "https://drive.google.com/file/d/1OukjSR4_xVIml79zcIY5J_FEGcw_djLd/view?usp=sharing"
+                },
+            },
+            sections: [
+                {
+                    title: "Use perspective",
+                    paragraphs: [
+                        "Use perspective and rotate the building to discover hidden paths."
+                    ],
+                    image: "JIM_Persp.gif"
+                },
+                {
+                    title: "Security guards",
+                    paragraphs: [
+                        "Avoid the security guards and reach the rooftop."
+                    ],
+                    image: "JIM_Guard.gif"
+                },
+                {
+                    title: "Wet floor",
+                    paragraphs: [
+                        "Watch out with the wet floor.",
+                        "If you slip with this floor you can be on trouble!"
+                    ],
+                    image: "JIM_Slip.gif"
+                },
+                {
+                    title: "Shelfs",
+                    paragraphs: [
+                        "Push and drag shelfs to unlock new paths.",
+                        "You also can block slipping trajectories and guards vision."
+                    ],
+                    image: "JIM_Shelf.gif"
+                },
+            ]
+        },
     ]
 }
