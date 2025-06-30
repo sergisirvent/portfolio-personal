@@ -9,6 +9,84 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-card {
+  perspective: 1000px;
+  width: calc(20% - 1rem); /* 5 por fila con espacio */
+  min-width: 100px;
+  height: 120px;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+@media (max-width: 992px) {
+  .skill-card {
+    width: calc(50% - 1rem); /* 3 por fila en tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  .skill-card {
+    width: calc(50% - 1rem); /* 2 por fila en móvil */
+  }
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.skill-card:hover .card-inner,
+.skill-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  color: white;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-back {
+  background: #333;
+  transform: rotateY(180deg);
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .about-image {
+    height: 500px;
+  }
+}
+
+
 body {
     font-family: "Inconsolata", monospace;
     color: #0d1e2d;

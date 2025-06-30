@@ -26,6 +26,14 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
+<script>
+  document.querySelectorAll('.skill-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+</script>
+
 <body>
 
   <!-- ======= Navbar ======= -->
@@ -33,55 +41,50 @@
 
   <main id="main">
 
-    <section class="section pb-5">
-      <div class="container">
-        <div class="row mb-5 align-items-end">
-          <div class="col-md-6" data-aos="fade-up">
-
-            <h2>About Me</h2>
-            <p class="mb-0">Hi, I'm Sergi Sirvent, currently I'm a graduated university student in Interactive Technologies, currently studying at ESAT in Valencia and I´m eager in finding a job where I can apply and improve my programming knowledge.</p>
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col-md-4 ml-auto order-2" style="color:white;background-color: rgb(0, 0, 0); border-radius: 5%; padding: 50px;" data-aos="fade-up">
-            <h3 class="h3 mb-4"><strong>My main skills</strong> </h3>
-            <ul class="list-unstyled row">
-              
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">Unity</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">Unreal</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">C#</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">C++</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">Java</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">Python</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">HTML & CSS</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">Swift</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">Photoshop</li>
-              <li class="list-item col-6 border-top py-2 elementos_lista_skills">SQL</li>
-            </ul>
-          </div>
-
-          <div class="col-md-7 mb-5 mb-md-0" data-aos="fade-up">
-            <p><img src="assets/img/me.jpg" alt="Image" class="myImage"></p>
-            <p>I have always had a strong affinity for mathematics and through video game programming I have been able to merge it with one of my great hobbies, video games. Alongside game design, I occasionally venture into level design as well.</p>
-            <p>I'm a organizated, active and respectful person and I excel in collaborative teamwork. I've actively participated in projects using AGILE methodologies, particularly  SCRUM, and I am used to working with this approach.</p>
-            
-            <p>I studied <span style="font-weight: bold;"> Interactive Technologies at Polytechnic University of Valencia (UPV)</span> from 2019 to 2023. In my last year I participated in a exchange program with Barcelona's <span style="font-weight: bold;">School of new Interactive Technologies(ENTI).</span> Currently, I am studying the Video Game Programming degree at the School of Art and Technology (ESAT) in Valencia.</p>
-            <p>In addition, I have a Cambridge B2 level qualification and I'm learning Japanese. 
-              Also in 2019 I participated in a UPV activity called 'Global Game Jam', which was the experience that introduced me to video game programming. 
-              </p>
-            
-            <p><a href="pdf/CV-2023-H.pdf" target="_blank" class="readmore" download>Download my CV</a></p>
-           
-          </div>
-
-        </div>
-
+  <section class="section pb-5">
+  <div class="container">
+    <!-- Imagen y texto -->
+    <div class="row align-items-start mb-5 flex-lg-nowrap flex-wrap">
+      
+      <!-- Imagen -->
+      <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-up">
+        <img src="assets/img/me.jpg" alt="Portrait of Sergi Sirvent" class="about-image">
       </div>
 
-    </section>
+      <!-- Texto -->
+      <div class="col-lg-7" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>Hello! I'm <strong>Sergi Sirvent</strong>, a graduate in Interactive Technologies currently studying Video Game Programming at ESAT in Valencia. I'm passionate about applying and expanding my programming skills in a professional environment.</p>
+        <p>I've always had a strong affinity for mathematics, and through game programming, I’ve been able to combine it with one of my greatest hobbies: video games.</p>
+        <p>I’m an organized, proactive, and respectful person who thrives in team environments. I’ve actively participated in projects using agile methodologies like SCRUM and feel comfortable working within that framework.</p>
+        <p>I earned my degree in <strong>Interactive Technologies at the Polytechnic University of Valencia (UPV)</strong> from 2019 to 2023. In my final year, I joined an exchange program at <strong>ENTI-UB in Barcelona</strong>. Currently, I’m continuing my studies at <strong>ESAT Valencia</strong>.</p>
+        <p>I also hold a Cambridge B2 English certificate and I’m currently learning Japanese.</p>
+        <p>You can find several of my published projects on my Itch.io profile — I’m always exploring new game ideas and creative projects.</p>
+        <p><a href="pdf/CV-2024-ENG.pdf" target="_blank" class="readmore" download>Download my CV</a></p>
+      </div>
+    </div>
 
+    <!-- Habilidades -->
+    <div class="row" data-aos="fade-up">
+      <div class="col-12">
+        <h3 class="text-center mb-4"><strong>My Main Skills</strong></h3>
+        <div class="skills-grid">
+          <div class="skill-card"><div class="card-inner"><div class="card-front">Unity</div><div class="card-back">2D/3D Engine</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">Unreal</div><div class="card-back">Blueprints & C++</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">C#</div><div class="card-back">Game & Tools Dev</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">C / C++</div><div class="card-back">Low-Level Logic</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">Git & Perforce</div><div class="card-back">Version Control</div></div></div>
+
+          <div class="skill-card"><div class="card-inner"><div class="card-front">ImGui</div><div class="card-back">Debug UI Tools</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">OpenGL</div><div class="card-back">Rendering APIs</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">SQL</div><div class="card-back">Databases</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">ARM ASM</div><div class="card-back">Low-Level Programming</div></div></div>
+          <div class="skill-card"><div class="card-inner"><div class="card-front">SCRUM</div><div class="card-back">Agile Workflow</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   </main><!-- End #main -->
   <div style="text-align: center;">
     <h3>My hobbies</h3>
