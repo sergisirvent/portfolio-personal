@@ -13,7 +13,7 @@ const database = {
                 title: "Jimbo Delta Tower",
                 language: "Unreal Engine C++",
                 image: "JIM_BACK.png",
-                filter: "mainProjects games developing"
+                filter: "mainProjects games"
             },
             
             {
@@ -30,20 +30,12 @@ const database = {
                 image: "YNK.png",
                 filter: "mainProjects"
             },
-            
-            {
-                id: "IT",
-                title: "Ice Tiles",
-                language: "Unity",
-                image: "logo.png",
-                filter: "mainProjects games developing"
-            },
             {
                 id: "asteroids",
                 title: "Asteroids",
                 language: "C++",
                 image: "miniAsteroids.jpg",
-                filter: "mainProjects games"
+                filter:  "games"
             },
             {
                 id: "CHESS",
@@ -57,42 +49,42 @@ const database = {
                 title: "Ice Tiles",
                 language: "Unity",
                 image: "logo.png",
-                filter: "mainProjects games developing"
+                filter: "games developing"
             },
             {
                 id: "Jetpac",
                 title: "Jetpac",
                 language: "C++",
                 image: "jetpacMenu.jpg",
-                filter: "mainProjects games"
+                filter: "games"
             },
             {
                 id: "MC",
                 title: "Moon Cresta",
                 language: "C++",
                 image: "mooncrestacard.jpg",
-                filter: "mainProjects games"
+                filter: "games"
             },
             {
                 id: "Jetpac",
                 title: "Jetpac",
                 language: "C++",
                 image: "jetpacMenu.jpg",
-                filter: "mainProjects games"
+                filter: "games"
             },
             {
                 id: "TLOA",
                 title: "The last of Angle",
                 language: "Unity VR",
                 image: "TLOA.jpg",
-                filter: "mainProjects"
+                filter: "games prototype"
             },
             {
                 id: "CG",
                 title: "Crystal Guardians",
                 language: "Unity",
                 image: "miniaturaCG.jpg",
-                filter: "mainProjects"
+                filter: "prototype"
             },
             {
                 id: "SM",
