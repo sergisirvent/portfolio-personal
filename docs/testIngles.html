@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>C1 Phrasal Verbs & Grammar Practice</title>
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f1f5f9;
+    color: #111;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: #1e40af;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  h1, h2 {
+    margin-bottom: 0.5rem;
+  }
+  main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .flashcard {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .flashcard:hover {
+    transform: scale(1.03);
+  }
+  .front, .back {
+    display: none;
+  }
+  .active .front {
+    display: block;
+  }
+  .flipped .back {
+    display: block;
+  }
+  button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  button:hover {
+    background: #1e3a8a;
+  }
+  .practice {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    margin-top: 2rem;
+  }
+  ol li {
+    margin: 0.6rem 0;
+  }
+  footer {
+    background: #1e293b;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Phrasal Verbs Flashcards</h1>
+  <p>Learn, practise, and master advanced English phrasal verbs & prepositions</p>
+</header>
+
+<main>
+  <section id="flashcard-section">
+    <h2>🔹 Interactive Flashcards</h2>
+    <div id="flashcard" class="flashcard active">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
+    <div style="text-align:center;">
+      <button id="prev">⟵ Previous</button>
+      <button id="flip">Flip</button>
+      <button id="next">Next ⟶</button>
+    </div>
+  </section>
+
+  <section id="grammar-section" class="practice">
+  <h2>🧠 Grammar & Preposition Practice</h2>
+  <p>Tap “Flip” to reveal the correct preposition or auxiliary verb.</p>
+
+  <div id="grammar-card" class="flashcard active">
+    <div class="front"></div>
+    <div class="back"></div>
+  </div>
+
+  <div style="text-align:center;">
+    <button id="prevGrammar">⟵ Previous</button>
+    <button id="flipGrammar">Flip</button>
+    <button id="nextGrammar">Next ⟶</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>© 2025 LearnEnglish Pro | Local Study Resource for C1 Learners</p>
+</footer>
+
+<script>
+// --- Local database of key phrasal verbs (extracted & adapted from C1-level corpora & handbooks) ---
+const phrasalVerbs = [
+  {verb: "bring up", meaning: "to mention a topic or start talking about it", example: "She brought up an interesting point during the meeting."},
+  {verb: "carry out", meaning: "to perform or complete a task", example: "The scientists carried out several experiments."},
+  {verb: "come across", meaning: "to find something by chance", example: "I came across an old photo while cleaning the attic."},
+  {verb: "cut down on", meaning: "to reduce the amount of something", example: "You should cut down on sugar if you want to stay healthy."},
+  {verb: "deal with", meaning: "to handle or manage a situation", example: "He had to deal with a difficult customer yesterday."},
+  {verb: "end up", meaning: "to finally be in a particular place or situation", example: "We got lost and ended up in a completely different town."},
+  {verb: "get over", meaning: "to recover from something (illness, loss, difficulty)", example: "It took her weeks to get over the flu."},
+  {verb: "give up", meaning: "to stop doing something or quit", example: "He finally gave up smoking after ten years."},
+  {verb: "go on", meaning: "to continue doing something", example: "Please, go on with your presentation."},
+  {verb: "look after", meaning: "to take care of someone or something", example: "I’ll look after your dog while you’re away."},
+  {verb: "look forward to", meaning: "to anticipate with pleasure", example: "I’m looking forward to our trip next weekend."},
+  {verb: "put off", meaning: "to postpone or delay", example: "They decided to put off the meeting until Monday."},
+  {verb: "run out of", meaning: "to use all of something and have none left", example: "We ran out of coffee this morning."},
+  {verb: "set up", meaning: "to start or establish something (a business, project, etc.)", example: "They set up a new company last year."},
+  {verb: "take over", meaning: "to assume control of something", example: "The assistant manager took over when her boss retired."},
+  {verb: "turn down", meaning: "to reject or refuse", example: "He turned down the job offer."},
+  {verb: "work out", meaning: "to exercise or to find a solution", example: "I go to the gym to work out three times a week."},
+  {verb: "pick up", meaning: "to collect or learn something new", example: "She picked up some Italian during her stay in Rome."},
+  {verb: "break down", meaning: "to stop functioning or lose control emotionally", example: "The car broke down on the motorway."},
+  {verb: "come up with", meaning: "to think of or invent an idea or solution", example: "They came up with an innovative design."},
+  {verb: "back up", meaning: "to support or make a copy of data", example: "Make sure you back up your files regularly."},
+  {verb: "blow up", meaning: "to explode or suddenly become very angry", example: "The bomb blew up in the middle of the square."},
+  {verb: "break into", meaning: "to enter a building by force", example: "Someone broke into our house last night."},
+  {verb: "bring about", meaning: "to cause something to happen", example: "The new policy brought about many positive changes."},
+  {verb: "call off", meaning: "to cancel an event or activity", example: "The meeting was called off due to bad weather."},
+  {verb: "carry on", meaning: "to continue doing something", example: "Even after the interruption, she carried on reading."},
+  {verb: "check out", meaning: "to examine or look at something", example: "You should check out that new restaurant downtown."},
+  {verb: "come up", meaning: "to occur or be mentioned unexpectedly", example: "Your name came up during the discussion."},
+  {verb: "cut off", meaning: "to stop the supply of something or interrupt", example: "The storm cut off electricity to the whole area."},
+  {verb: "drop off", meaning: "to deliver someone or something somewhere", example: "I’ll drop you off at the station on my way to work."},
+  {verb: "fill in", meaning: "to complete a form or document", example: "Please fill in the registration form."},
+  {verb: "find out", meaning: "to discover information", example: "She found out that her colleague had lied."},
+  {verb: "get along with", meaning: "to have a good relationship with someone", example: "I get along well with all my coworkers."},
+  {verb: "get by", meaning: "to manage to live or survive", example: "It’s not easy to get by on such a low salary."},
+  {verb: "get rid of", meaning: "to remove or throw something away", example: "I need to get rid of all these old clothes."},
+  {verb: "go over", meaning: "to review or examine something carefully", example: "Let’s go over the report before submitting it."},
+  {verb: "hold on", meaning: "to wait or keep going", example: "Hold on a minute, I’ll be right back."},
+  {verb: "keep up with", meaning: "to stay at the same level as someone or something", example: "She walks so fast that I can’t keep up with her."},
+  {verb: "let down", meaning: "to disappoint someone", example: "He really let me down when he didn’t show up."},
+  {verb: "look into", meaning: "to investigate or research something", example: "The police are looking into the case."},
+  {verb: "make up", meaning: "to invent a story or become friends again", example: "They made up after their argument."},
+  {verb: "put up with", meaning: "to tolerate or accept something unpleasant", example: "I can’t put up with his behavior anymore."},
+  {verb: "rely on", meaning: "to depend on someone or something", example: "You can always rely on her for help."},
+  {verb: "run into", meaning: "to meet someone by chance", example: "I ran into an old friend at the airport."},
+  {verb: "show off", meaning: "to display something proudly", example: "He likes to show off his new car."},
+  {verb: "stand out", meaning: "to be noticeable or distinctive", example: "Her bright clothes made her stand out in the crowd."},
+  {verb: "take after", meaning: "to resemble a family member", example: "She takes after her mother in looks and character."},
+  {verb: "take up", meaning: "to start a new hobby or activity", example: "I’ve taken up yoga recently."},
+  {verb: "turn out", meaning: "to result or happen in a particular way", example: "Everything turned out fine in the end."},
+  {verb: "wind up", meaning: "to finish or end something", example: "Let’s wind up the meeting with a quick summary."},
+  {verb: "work through", meaning: "to deal with a problem step by step", example: "We need to work through these issues together."},
+  {verb: "look up to", meaning: "to admire or respect someone", example: "Many students look up to their teachers."},
+  {verb: "come down to", meaning: "to be reduced to a single point or issue", example: "It all comes down to who works harder."},
+  {verb: "get away with", meaning: "to avoid punishment for something", example: "He cheated on the test and got away with it."},
+  {verb: "go along with", meaning: "to agree with a plan or decision", example: "I decided to go along with their suggestion."},
+  {verb: "fall apart", meaning: "to break into pieces or stop working emotionally", example: "The old bridge is falling apart."},
+  {verb: "hand out", meaning: "to distribute something to people", example: "The teacher handed out the exam papers."},
+  {verb: "look down on", meaning: "to think someone is inferior", example: "She tends to look down on people who aren’t like her."},
+  {verb: "own up to", meaning: "to admit or confess something", example: "He finally owned up to breaking the window."},
+  {verb: "pass out", meaning: "to faint or lose consciousness", example: "It was so hot that several runners passed out."},
+  {verb: "put together", meaning: "to assemble or create something", example: "They put together a detailed proposal."},
+  {verb: "run over", meaning: "to hit something or someone with a vehicle", example: "Be careful not to run over the cat!"}
+];
+
+let current = 0;
+const flashcard = document.getElementById("flashcard");
+const front = document.querySelector(".front");
+const back = document.querySelector(".back");
+
+function renderCard() {
+  const item = phrasalVerbs[current];
+  front.innerHTML = `<h3>${item.verb}</h3><p><em>Tap “Flip” to see meaning and example</em></p>`;
+  back.innerHTML = `<h3>${item.verb}</h3><p><strong>Meaning:</strong> ${item.meaning}</p><p><strong>Example:</strong> ${item.example}</p>`;
+  flashcard.classList.remove("flipped");
+}
+renderCard();
+
+document.getElementById("flip").addEventListener("click", () => {
+  flashcard.classList.toggle("flipped");
+});
+document.getElementById("next").addEventListener("click", () => {
+  current = (current + 1) % phrasalVerbs.length;
+  renderCard();
+});
+document.getElementById("prev").addEventListener("click", () => {
+  current = (current - 1 + phrasalVerbs.length) % phrasalVerbs.length;
+  renderCard();
+});
+
+const grammarCards = [
+  {
+    question: "I’m really interested ___ learning new languages.",
+    answer: "in",
+    explanation: "We say 'interested in' when expressing attraction or curiosity about something."
+  },
+  {
+    question: "We need to focus ___ improving our teamwork.",
+    answer: "on",
+    explanation: "The verb 'focus' always takes the preposition 'on' followed by an -ing form."
+  },
+  {
+    question: "He insisted ___ paying for the dinner.",
+    answer: "on",
+    explanation: "'Insist' is followed by 'on' + verb-ing."
+  },
+  {
+    question: "This project depends ___ the final approval of the manager.",
+    answer: "on",
+    explanation: "We use 'depend on' when something is conditional or relies on another factor."
+  },
+  {
+    question: "I’m looking forward ___ hearing from you soon.",
+    answer: "to",
+    explanation: "'Look forward to' is a fixed expression followed by a noun or -ing verb."
+  },
+  {
+    question: "She has worked here ___ 2018.",
+    answer: "since",
+    explanation: "We use 'since' with the starting point of a period of time."
+  },
+  {
+    question: "By the time we arrived, they ___ already left.",
+    answer: "had",
+    explanation: "Past perfect ('had left') is used for the earlier of two past actions."
+  },
+  {
+    question: "If I ___ known, I would have called you earlier.",
+    answer: "had",
+    explanation: "In third conditional, we use 'had' + past participle in the if-clause."
+  }
+];
+
+let gIndex = 0;
+const grammarCard = document.getElementById("grammar-card");
+const gFront = grammarCard.querySelector(".front");
+const gBack = grammarCard.querySelector(".back");
+
+function renderGrammarCard() {
+  const item = grammarCards[gIndex];
+  gFront.innerHTML = `<h3>Question ${gIndex + 1}</h3><p>${item.question}</p><p><em>Tap “Flip” to see the answer</em></p>`;
+  gBack.innerHTML = `<h3>Answer: <span style="color:#2563eb">${item.answer}</span></h3><p>${item.explanation}</p>`;
+  grammarCard.classList.remove("flipped");
+}
+renderGrammarCard();
+
+// Event listeners for grammar flashcards
+document.getElementById("flipGrammar").addEventListener("click", () => {
+  grammarCard.classList.toggle("flipped");
+});
+document.getElementById("nextGrammar").addEventListener("click", () => {
+  gIndex = (gIndex + 1) % grammarCards.length;
+  renderGrammarCard();
+});
+document.getElementById("prevGrammar").addEventListener("click", () => {
+  gIndex = (gIndex - 1 + grammarCards.length) % grammarCards.length;
+  renderGrammarCard();
+});
+</script>
+</body>
+</html>
