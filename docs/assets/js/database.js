@@ -15,13 +15,26 @@ const database = {
                 image: "JIM_BACK.png",
                 filter: "mainProjects games"
             },
-            
             {
                 id: "COM",
                 title: "Compendium",
                 language: "Unity",
                 image: "COM_Back.png",
                 filter: "mainProjects"
+            },
+            {
+                id: "IAT",
+                title: "Terror map tool",
+                language: "Unreal Engine C++",
+                image: "COM_Back.png",
+                filter: "tools"
+            },
+            {
+                id: "IAP",
+                title: "AI-based enemies",
+                language: "Unreal Engine C++",
+                image: "AI_Enemies.png",
+                filter: "tools"
             },
             {
                 id: "YNK",
@@ -821,6 +834,75 @@ const database = {
                     image: "JIM_Shelf.gif"
                 },
             ]
+        },
+        {
+            id: "IAP",
+            head: {
+                title: "AI-based enemies",
+                description: "In this project I implemented several AI-based enemies with different types of behaviour and different types of movement. The project is made with Unreal Engine AI tools like AI perception, EQS and CrowdManager."
+            },
+            body: {
+                image: "AI_Enemies.png",
+                title: "AI-based enemies - Individual project",
+                technology: "Unreal Engine C++",
+                content: [
+                "Individual Unreal Engine project focused on designing and implementing multiple enemy archetypes with distinct behaviors and movement styles.",
+                "Enemies use Unreal AI tools such as AI Perception for sensing, EQS for decision making (cover, search points), and Crowd Manager for smooth navigation and avoidance in groups.",
+                "Includes patrol, investigate, chase and search states, with configurable parameters to tweak difficulty and responsiveness."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/2t5Vqq836cI?si=k7yndq8qyVj7Qj-J",
+                    videoSectionTitle: "Video showcase",
+                },
+            },
+            sections: [
+                {
+                    title: "Enemy 1 - Patrol",
+                    paragraphs: [
+                        "Using behaviour tree and AI perception (Sight)",
+                        "Enemy patrols between several points, if the player enters in his sight radius, he will chase him until he attacks him. If the player is lost, the enemy will return to his patrol."
+                    ],
+                    image: "IAE_E1.gif"
+                },
+                {
+                    title: "Enemy 2 - Bomber",
+                    paragraphs: [
+                        "Using behaviour tree and EQS",
+                        "The bomber approaches the player from behind. If the player looks at him, he runs away using EQS to find a place to hide. If he manages to reach the player, he leaves a bomb ans escapes again to a safe place."
+                    ],
+                    image: "IAE_E2.gif"
+                },
+                {
+                    title: "Enemy 3 - Crowd formator",
+                    paragraphs: [
+                        "Using Crowd Manager detour",
+                        "Several agents are controlled simultaneously with the Crowd Manager to form letters. With the possibility of dispering into random positions."
+                    ],
+                    image: "IAE_E3.gif"
+                },
+            ]
+        },
+
+        {
+            id: "IAP",
+            head: {
+                title: "AI-based enemies",
+                description: "In this project I implemented several AI-based enemies with different types of behaviour and different types of movement. The project is made with Unreal Engine AI tools like AI perception, EQS and CrowdManager."
+            },
+            body: {
+                image: "AI_Enemies.png",
+                title: "AI-based enemies - Individual project",
+                technology: "Unreal Engine C++",
+                content: [
+                "Individual Unreal Engine project focused on designing and implementing multiple enemy archetypes with distinct behaviors and movement styles.",
+                "Enemies use Unreal AI tools such as AI Perception for sensing, EQS for decision making (cover, search points), and Crowd Manager for smooth navigation and avoidance in groups.",
+                "Includes patrol, investigate, chase and search states, with configurable parameters to tweak difficulty and responsiveness."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/2t5Vqq836cI?si=k7yndq8qyVj7Qj-J",
+                    videoSectionTitle: "Video showcase",
+                },
+            },
         },
     ]
 }
