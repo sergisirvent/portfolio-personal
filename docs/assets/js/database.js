@@ -26,15 +26,15 @@ const database = {
                 id: "IAT",
                 title: "Terror map tool",
                 language: "Unreal Engine C++",
-                image: "COM_Back.png",
-                filter: "tools"
+                image: "alien.png",
+                filter: "prototype"
             },
             {
                 id: "IAP",
                 title: "AI-based enemies",
                 language: "Unreal Engine C++",
                 image: "AI_Enemies.png",
-                filter: "tools"
+                filter: "prototype"
             },
             {
                 id: "YNK",
@@ -853,6 +853,7 @@ const database = {
                 links: {
                     videoYoutubeEmbedLink: "https://www.youtube.com/embed/2t5Vqq836cI?si=k7yndq8qyVj7Qj-J",
                     videoSectionTitle: "Video showcase",
+                    videoBtnLabel: "See video showcase",
                 },
             },
             sections: [
@@ -884,25 +885,51 @@ const database = {
         },
 
         {
-            id: "IAP",
+            id: "IAT",
             head: {
-                title: "AI-based enemies",
-                description: "In this project I implemented several AI-based enemies with different types of behaviour and different types of movement. The project is made with Unreal Engine AI tools like AI perception, EQS and CrowdManager."
+                title: "First person AI terror map with tool",
+                description: "Demo created with Unreal Engine C++."
             },
             body: {
-                image: "AI_Enemies.png",
-                title: "AI-based enemies - Individual project",
+                image: "alien.png",
+                title: "First person AI terror map with tool - Collaorative project",
                 technology: "Unreal Engine C++",
                 content: [
-                "Individual Unreal Engine project focused on designing and implementing multiple enemy archetypes with distinct behaviors and movement styles.",
-                "Enemies use Unreal AI tools such as AI Perception for sensing, EQS for decision making (cover, search points), and Crowd Manager for smooth navigation and avoidance in groups.",
-                "Includes patrol, investigate, chase and search states, with configurable parameters to tweak difficulty and responsiveness."
-                ],
+                "In this demo the map is generated from a png file, using a color code.",
+                "The demo has a tile-based movement, using hand made collisions without using the Unreal Engine collision system.",
+                "There is also an enemy controlled with different types of behaviours. The player has a cenital camera where can see the position of the enemy and can change the type of movement.",
+                "Also there is a tool for transform the map dynamically, changing the position of the walls. This tool is very useful for testing and for creating new maps quickly and to see how is the enemy reacting."
+            ],
                 links: {
-                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/2t5Vqq836cI?si=k7yndq8qyVj7Qj-J",
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/JGtWoDxTuUM?si=XmqHPDKhpylRzsy8",
+                    videoBtnLabel: "See video showcase",
                     videoSectionTitle: "Video showcase",
                 },
             },
+            sections: [
+                {
+                    title: "Png map generation",
+                    paragraphs: [
+                        "The map is generated from a png file, using a color code. Each color represents a different type of tile, like walls, floor or safe zones.",
+                    ],
+                    image: "mapGeneration.gif"
+                },
+                {
+                    title: "Tile-based movement",
+                    paragraphs: [
+                        "The player movement is tile-based, and the collisions are hand made, without using the Unreal Engine collision system.",
+                        "This type of movement is very useful for this type of game, because it gives a lot of precision to the player and allows us to have more control over the movement and the collisions."
+                    ],
+                    image: "tileMovement.gif"
+                },
+                {
+                    title: "Cenital view and tooling",
+                    paragraphs: [
+                        "This view works as a debug view because the player can see the position of the enemy and can change the type of movement and the map distribution.",
+                    ],
+                    image: "cenitalTool.gif"
+                },
+            ]
         },
     ]
 }
