@@ -2,6 +2,13 @@ const database = {
     home: {
         items: [
             {
+                id: "MENTAT",
+                title: "Mentat Engine",
+                language: "C++ · OpenGL · Android",
+                image: "mentat_engine_card.jpg",
+                filter: "mainProjects"
+            },
+            {
                 id: "RD",
                 title: "Railgun Defender: AEGIS",
                 language: "Unity",
@@ -929,6 +936,65 @@ const database = {
                     ],
                     image: "cenitalTool.gif"
                 },
+            ]
+        },
+
+        {
+            id: "MENTAT",
+            head: {
+                title: "Mentat Engine",
+                description: "A cross-platform 3D graphics engine developed from scratch in C++ with OpenGL, ECS, Lua scripting, advanced renderers and Android support."
+            },
+            body: {
+                image: "mentat_engine_card.jpg",
+                title: "Mentat Engine - Cross-platform 3D Graphics Engine",
+                technology: "C++20 · OpenGL · OpenGL ES · Android · Lua · ImGui",
+                content: [
+                    "Mentat Engine is a 3D graphics engine developed from scratch as part of the Engine Programming course at ESAT. The project focuses on modern C++ architecture, real-time rendering, ECS-based scene management and cross-platform execution.",
+                    "The engine includes a desktop editor built with ImGui, XML scene serialization, Lua scripting, a job system for asynchronous tasks, resource management, mesh and texture streaming, and several rendering techniques such as PBR, deferred rendering and shadow mapping.",
+                    "One of the main goals of the project was to port the engine to Android while keeping the same scene format and most of the runtime logic shared between PC and mobile."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/drM68_Kbt9I?si=2yp_VPnd0FIJywRD",
+                    videoSectionTitle: "Engine demo",
+                    videoBtnLabel: "Watch engine demo"
+                },
+            },
+            sections: [
+                {
+                    title: "Editor and XML scene workflow",
+                    paragraphs: [
+                        "The desktop version includes an ImGui-based editor that allows editing entities, components, cameras, lights, renderizable objects and scripts.",
+                        "Scenes are saved and loaded using XML, making it possible to share scene data between the desktop editor and the Android runtime using portable asset paths."
+                    ],
+                    image: "mentat_editor.gif"
+                },
+                {
+                    title: "Rendering techniques",
+                    paragraphs: [
+                        "Mentat Engine implements multiple rendering paths and visual techniques, including Phong rendering, PBR rendering, deferred rendering and shadow mapping.",
+                        "These renderers were used in different demos to validate lighting, materials, framebuffer usage and multi-pass rendering."
+                    ],
+                    image: "mentat_renderers.gif"
+                },
+                {
+                    title: "Job system and resource streaming",
+                    paragraphs: [
+                        "The engine includes a job system used to process asynchronous tasks such as mesh and texture loading.",
+                        "The streaming system manages LODs, mipmaps, memory budget and visibility decisions to keep large scenes running efficiently."
+                    ],
+                    image: "mentat_streaming.gif"
+                },
+                {
+                    title: "Android port",
+                    paragraphs: [
+                        "The Android version loads the same scene data into the real ECS runtime and renders it using an OpenGL ES backend.",
+                        "This port proves that the engine architecture is portable and that platform-specific systems can be isolated without duplicating the whole engine.",
+                        "The engine separates shared systems from platform-specific code. The ECS, components, XML scene data, resource flow and scripting logic are shared, while each platform provides its own windowing, filesystem and rendering backend.",
+                        "On PC the engine uses desktop OpenGL, GLFW and ImGui. On Android it uses NativeActivity, EGL, OpenGL ES and Android assets through AAssetManager."
+                    ],
+                    image: "mentat_city_android.gif"
+                }
             ]
         },
     ]
