@@ -30,6 +30,27 @@ const database = {
                 filter: "mainProjects"
             },
             {
+                id: "MN",
+                title: "Movie Ninja",
+                language: "C++ · SDL3 · PC/Mac/iOS/Android",
+                image: "MovieNinja_card.jpg",
+                filter: "mainProjects"
+            },
+            {
+                id: "UEP",
+                title: "Unreal Engine Plugins",
+                language: "Unreal Engine 5.5 · C++ · Plugins",
+                image: "UnrealPlugins_card.png",
+                filter: "mainProjects"
+            },
+            {
+                id: "CM",
+                title: "Custom Market",
+                language: "Stardew Valley · Garry's Mod · PCG",
+                image: "customMarketCard.jpg",
+                filter: "mainProjects"
+            },
+            {
                 id: "IAT",
                 title: "Terror map tool",
                 language: "Unreal Engine C++",
@@ -201,6 +222,175 @@ const database = {
                     ],
                     image: "consoleGif.gif"
                 },
+            ]
+        },
+        {
+            id: "MN",
+            head: {
+                title: "Movie Ninja",
+                description: "An individual cross-platform C++ movie catalog app for PC, Mac, iOS and Android, built with SDL3, OpenGL and OpenGL ES, featuring persisted movie preferences and an unlockable slicing minigame."
+            },
+            body: {
+                image: "MovieNinja_card.jpg",
+                title: "Movie Ninja - Individual project",
+                technology: "C++17 · SDL3 · OpenGL/OpenGL ES · CMake · Gradle/Xcode · JSON · PC/Mac/iOS/Android",
+                content: [
+                    "Movie Ninja is an individual cross-platform C++ application designed to run on PC, Mac, iOS and Android through SDL3, OpenGL and OpenGL ES. I built the project around a movie catalog, user preference persistence and a small arcade minigame that shares the same rendering and input layer.",
+                    "I implemented the full flow: loading movie data from JSON, marking movies as liked or disliked, persisting that state locally, and using those choices to unlock a VHS/DVD slicing minigame with 3D rendered cases, physics-style movement, collision detection and audio feedback."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/bob-gHdVPnA?si=TMCKGc3dgd-iWPSp",
+                    videoSectionTitle: "Movie Ninja demo video",
+                    videoBtnLabel: "See demo video"
+                }
+            },
+            sections: [
+                {
+                    title: "Movie catalog",
+                    paragraphs: [
+                        "Scrollable movie list loaded from JSON, with touch input support and detail navigation.",
+                        "Each movie stores title, year, overview, poster path and user preference state."
+                    ],
+                    image: "MovieNinja_catalog.gif"
+                },
+                {
+                    title: "Preference persistence",
+                    paragraphs: [
+                        "Liked and disliked movies are saved locally in a user-data JSON file.",
+                        "The library screen groups the user's choices and keeps the state between sessions."
+                    ],
+                    image: "MovieNinja_library.gif"
+                },
+                {
+                    title: "Unlocked minigame",
+                    paragraphs: [
+                        "The minigame becomes available once the user has at least one liked and one disliked movie.",
+                        "It renders 3D DVD/VHS cases using OpenGL, applies motion and collision detection, and rewards slicing disliked movies while avoiding liked ones."
+                    ],
+                    image: "MovieNinja_game.gif"
+                }
+            ]
+        },
+        {
+            id: "UEP",
+            head: {
+                title: "Unreal Engine Plugins",
+                description: "An individual Unreal Engine 5.5 project built around two independent runtime plugins: DynamicMinimap and WFC_City, designed to be reusable and publishable separately."
+            },
+            body: {
+                image: "UnrealPlugins_card.png",
+                title: "Unreal Engine Plugins - Individual project",
+                technology: "Unreal Engine 5.5 · C++ · Runtime Plugins · Blueprints · UMG · WFC",
+                content: [
+                    "This project focuses on developing two Unreal Engine plugins as independent products, so each one can be packaged, reused and published separately, for example on Fab. The final project also includes a demo scene where both plugins are combined in the same playable environment.",
+                    "DynamicMinimap provides a minimap system with a scene capture actor, a UMG widget, marker components, marker types, collectible support and a GameInstance subsystem that registers and exposes visible markers at runtime.",
+                    "WFC_City implements a tiled city generator based on Wave Function Collapse. It loads tile compatibility data from a DataTable, collapses the map by lowest entropy, propagates directional constraints and exposes generation controls for instant or step-by-step execution.",
+                    "The integration scene connects both plugins: WFC_City generates the city layout, while DynamicMinimap follows the player and displays runtime markers, collectibles and objectives over the generated environment."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/VmrPhZ5l8S4?si=2v-PPOrRoy-ZU663",
+                    videoSectionTitle: "Unreal Engine plugins demo video",
+                    videoBtnLabel: "See demo video"
+                }
+            },
+            sections: [
+                {
+                    title: "Independent runtime plugins",
+                    paragraphs: [
+                        "The project is split into two separate Unreal Engine runtime plugins, DynamicMinimap and WFC_City, each with its own module, descriptor, C++ source and content folder.",
+                        "The goal was to make both plugins self-contained enough to be packaged, reused and published independently, while still being able to work together in a demo project."
+                    ],
+                    image: "UnrealPlugins_IndependentPlugins.png"
+                },
+                {
+                    title: "Dynamic minimap system",
+                    paragraphs: [
+                        "DynamicMinimap follows the player with a SceneCapture2D actor and renders the result into a UMG minimap widget.",
+                        "Actors can expose themselves through marker components, with configurable marker type, icon, color, size and optional rotation."
+                    ],
+                    image: "UEP_dynamic_minimap.gif"
+                },
+                {
+                    title: "WFC city generation",
+                    paragraphs: [
+                        "WFC_City generates tiled city layouts from a DataTable of tile compatibility rules.",
+                        "The generator can run instantly or step by step, selecting the tile with the lowest entropy and propagating directional constraints after every collapse."
+                    ],
+                    image: "UEP_wfc_generation.gif"
+                },
+                {
+                    title: "Combined demo scene",
+                    paragraphs: [
+                        "The final scene demonstrates both plugins working together in the same environment, combined with visual asset packs from the Unity Asset Store to simulate how the plugins could be integrated into a real production project.",
+                        "WFC_City builds the city layout, while DynamicMinimap tracks the player and displays objectives, collectibles and custom markers over the generated level."
+                    ],
+                    image: "UEP_combined_scene.gif"
+                }
+            ]
+        },
+        {
+            id: "CM",
+            head: {
+                title: "Custom Market",
+                description: "A collaborative cross-game mod project where the same seed can generate a procedural market in both Stardew Valley and Garry's Mod."
+            },
+            body: {
+                image: "customMarketCard.jpg",
+                title: "Custom Market - Collaborative mod project",
+                technology: "Stardew Valley · Garry's Mod · C# · Lua · PCG · A* · Markov Chains",
+                content: [
+                    "Custom Market is a collaborative mod project focused on generating the same procedural market across two very different games: Stardew Valley and Garry's Mod. The player can create a random market or enter a specific seed, and that seed can be reused in both games to reproduce the same layout logic.",
+                    "The generation system combines several procedural techniques, including cellular automata, Perlin Noise and OpenSimplex Noise. After the initial generation, cleanup and validation passes remove undesirable patterns, carve a safe spawn area and ensure the map remains navigable.",
+                    "The project also includes AI-oriented systems for market behaviour. NPCs use A* pathfinding over a walkable grid to reach shops and avoid obstacles, while Markov Chains help create more varied destination selection and movement patterns.",
+                    "A key goal was to make the seed format portable between both modding environments, so players could share generated markets and reproduce them consistently across the two versions."
+                ],
+                links: {
+                    videoYoutubeEmbedLink: "https://www.youtube.com/embed/oPiDpQvK0fo?si=gdAY9ECWTKG1Y9y2",
+                    videoSectionTitle: "Custom Market demo video",
+                    videoBtnLabel: "See demo video"
+                }
+            },
+            sections: [
+                {
+                    title: "Shared seed system",
+                    paragraphs: [
+                        "The project uses a portable seed format that stores the parameters needed to reproduce the generated market.",
+                        "A seed can be created randomly or entered manually, then reused in both Stardew Valley and Garry's Mod to recreate the same procedural result."
+                    ],
+                    image: "CM_shared_seed.gif"
+                },
+                {
+                    title: "Procedural market generation",
+                    paragraphs: [
+                        "The market layout is generated from a tile grid using different algorithms such as cellular automata, Perlin Noise and OpenSimplex Noise.",
+                        "Each algorithm gives a different type of terrain distribution, allowing more controlled or more organic market layouts depending on the selected parameters."
+                    ],
+                    image: "CM_generation_modes.gif"
+                },
+                {
+                    title: "Supply and demand pricing",
+                    paragraphs: [
+                        "The seed can enable or disable a supply and demand system that changes market prices based on the generated layout.",
+                        "When several shops of the same type appear within a configured radius, the system can apply discounts, making the economy react to the procedural distribution of vendors."
+                    ],
+                    image: "CM_supply_demand.gif"
+                },
+                {
+                    title: "NPC routing and behaviour",
+                    paragraphs: [
+                        "NPCs use A* pathfinding over the generated walkable grid to reach shops while avoiding obstacles, rocks, vendors and blocked tiles.",
+                        "Markov Chains are used to vary destination selection and create less repetitive movement inside the market."
+                    ],
+                    image: "CM_npc_routing.gif"
+                },
+                {
+                    title: "Pyscomantis cross-game reference",
+                    paragraphs: [
+                        "The seed stores a source-game parameter, so the generated market can react differently depending on whether it comes from Stardew Valley or Garry's Mod.",
+                        "Pyscomantis is used as a playful cross-game reference: when the seed comes from Garry's Mod, the Stardew Valley version can include a special wizard character, making the shared seed feel aware of its origin."
+                    ],
+                    image: "CM_pyscomantis_reference.gif"
+                }
             ]
         },
         {
